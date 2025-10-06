@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import BottomNav from "@/components/BottomNav";
+import Header from "../components/Header";
+import BottomNav from "../components/BottomNav";
 
 export const metadata: Metadata = {
   title: "Descuanto",
