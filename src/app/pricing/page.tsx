@@ -32,6 +32,10 @@ export default function PricingPage() {
     }
   ];
 
+  const handleClick = (planName: string) => {
+    alert(`Formulario próximamente disponible para el plan ${planName} 🚀`);
+  };
+
   return (
     <main className="container">
       <h1>Planes para marcas</h1>
@@ -39,18 +43,45 @@ export default function PricingPage() {
         Elige el plan que mejor se adapte a tus objetivos. Cambia o cancela en cualquier momento.
       </p>
 
-      <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
+      <div
+        className="grid"
+        style={{
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "20px"
+        }}
+      >
         {plans.map((p) => (
           <div key={p.name} className="card" style={{ textAlign: "center" }}>
             <h2>{p.name}</h2>
-            <p style={{ fontSize: "24px", fontWeight: "700", color: "var(--brand)" }}>{p.price}</p>
+            <p
+              style={{
+                fontSize: "24px",
+                fontWeight: "700",
+                color: "var(--brand)"
+              }}
+            >
+              {p.price}
+            </p>
             <p>{p.promos}</p>
-            <ul style={{ listStyle: "none", padding: 0, marginTop: "10px", color: "var(--muted)" }}>
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                marginTop: "10px",
+                color: "var(--muted)"
+              }}
+            >
               {p.features.map((f) => (
-                <li key={f} style={{ margin: "6px 0" }}>✔ {f}</li>
+                <li key={f} style={{ margin: "6px 0" }}>
+                  ✔ {f}
+                </li>
               ))}
             </ul>
-            <button className="btn btn-primary" style={{ marginTop: "12px", width: "100%" }}>
+            <button
+              className="btn btn-primary"
+              style={{ marginTop: "12px", width: "100%" }}
+              onClick={() => handleClick(p.name)}
+            >
               Contratar
             </button>
           </div>
