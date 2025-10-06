@@ -28,7 +28,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Chips de categorías (scroll horizontal) */}
+      {/* Chips de categorías */}
       <div className="chips">
         {categories.map((c) => (
           <button key={c.id} className="chip">{c.name}</button>
@@ -53,6 +53,4 @@ export default function Home() {
       </section>
     </main>
   );
-}
-
 }
