@@ -1,20 +1,59 @@
-export default function Pricing() {
+export default function PricingPage() {
+  const plans = [
+    {
+      name: "Starter",
+      price: "29€ / mes",
+      promos: "Hasta 50 promociones",
+      features: [
+        "Publicación básica en la app",
+        "Visibilidad estándar",
+        "Acceso a panel con métricas básicas"
+      ]
+    },
+    {
+      name: "Growth",
+      price: "79€ / mes",
+      promos: "Hasta 500 promociones",
+      features: [
+        "Mayor visibilidad en la home",
+        "Panel con métricas detalladas",
+        "Segmentación por ubicación y sector"
+      ]
+    },
+    {
+      name: "Pro",
+      price: "199€ / mes",
+      promos: "Hasta 1000 promociones",
+      features: [
+        "Destacado premium en resultados",
+        "Análisis avanzado del rendimiento",
+        "Atención personalizada y soporte prioritario"
+      ]
+    }
+  ];
+
   return (
     <main className="container">
-      <h1 style={{fontSize:28}}>Planes para marcas</h1>
-      <p style={{color:'#475569'}}>Cuanto mayor el plan, mayor visibilidad y datos de seguimiento (respetando GDPR).</p>
+      <h1>Planes para marcas</h1>
+      <p style={{ color: "var(--muted)", marginBottom: "20px" }}>
+        Elige el plan que mejor se adapte a tus objetivos. Cambia o cancela en cualquier momento.
+      </p>
 
-      <div className="grid grid-2">
-        {[
-          { name: 'Básico', detail: 'Hasta 50 promociones/mes, visibilidad estándar' },
-          { name: 'Pro', detail: 'Hasta 1.000 promociones/mes, visibilidad media' },
-          { name: 'Enterprise', detail: 'Ilimitado, máxima visibilidad, informes avanzados' },
-        ].map((p,i) => (
-          <article key={i} className="card">
-            <h3 style={{marginTop:0}}>{p.name}</h3>
-            <p>{p.detail}</p>
-            <a className="btn" href="#">Contactar / Contratar</a>
-          </article>
+      <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
+        {plans.map((p) => (
+          <div key={p.name} className="card" style={{ textAlign: "center" }}>
+            <h2>{p.name}</h2>
+            <p style={{ fontSize: "24px", fontWeight: "700", color: "var(--brand)" }}>{p.price}</p>
+            <p>{p.promos}</p>
+            <ul style={{ listStyle: "none", padding: 0, marginTop: "10px", color: "var(--muted)" }}>
+              {p.features.map((f) => (
+                <li key={f} style={{ margin: "6px 0" }}>✔ {f}</li>
+              ))}
+            </ul>
+            <button className="btn btn-primary" style={{ marginTop: "12px", width: "100%" }}>
+              Contratar
+            </button>
+          </div>
         ))}
       </div>
     </main>
