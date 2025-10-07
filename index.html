@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Descuanto · Página beta</title>
+  <meta name="description" content="Descuanto · Página beta, probando concepto de necesidad" />
+  <!-- Consent Mode v2: por defecto denegado -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted'
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MQKJBX6Q');
+  </script>
+  <!-- /Google Tag Manager -->
+  <style>
+    :root{ --bg:#ffffff; --fg:#111; --muted:#555; --brand:#111; --border:#eee; --card:#fafafa; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif}
+    .container{max-width:760px;margin:0 auto;padding:16px}
+    header{padding:20px 0;border-bottom:1px solid var(--border)}
+    .logo-wrap{display:flex;align-items:center;justify-content:center}
+    .logo{height:44px; width:auto; display:block}
+    .hero{padding:36px 0}
+    .hero h1{font-size:28px;line-height:1.15;margin:0 0 8px;text-align:center}
+    .hero p{font-size:16px;line-height:1.5;margin:0 0 24px;text-align:center;color:var(--muted)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+    form{display:flex;flex-direction:column;gap:12px}
+    label{font-weight:600;font-size:14px}
+    input[type="tel"]{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:12px;font-size:16px}
+    button{appearance:none;border:0;border-radius:12px;padding:12px 16px;font-weight:700;font-size:16px;background:var(--brand);color:#fff;cursor:pointer}
+    .small{font-size:12px;color:var(--muted)}
+    .success{display:none;margin-top:8px;font-size:14px;color:#0a7f44}
+    footer{margin-top:40px;padding:20px 0;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--muted)}
+    footer a{color:inherit;text-decoration:underline}
+
+    /* Banner cookies sencillo */
+    #cookie-banner{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--border);padding:12px;z-index:9999;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}
+    #cookie-banner p{margin:0;font-size:13px;color:#222;text-align:center}
+    #cookie-banner .actions{display:flex;gap:8px}
+    #cookie-banner button{padding:8px 12px;border-radius:10px;font-size:13px}
+    #cookie-accept{background:#111;color:#fff;border:0}
+    #cookie-reject{background:#f2f2f2;color:#111;border:1px solid #e5e5e5}
+
+    @media (min-width:720px){
+      .hero h1{font-size:36px}
+      .hero p{font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQKJBX6Q" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="container">
+    <div class="logo-wrap">
+      <img class="logo" src="./images/descuanto-logo.png" alt="Descuanto" />
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Descuentos, cuándo los necesitas</h1>
+      <p>Página beta, probando concepto de necesidad.</p>
+
+      <div class="card">
+        <form id="phone-form" novalidate>
+          <label for="phone">Déjanos tu teléfono y te avisamos cuando estemos disponibles</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ej. 612 345 678"
+                 aria-describedby="phone-help" required pattern="^\+?([0-9][\s-]?)(6, 15)$" />
+          <button type="submit">Avísame</button>
+          <p id="phone-help" class="small">Este número se usará <strong>solo</strong> para comunicar disponibilidad. <strong>Nunca</strong> se compartirá con terceros.</p>
+          <p id="form-success" class="success">¡Gracias! Hemos recibido tu número.</p>
+          <p id="form-error" class="success" style="color:#a40000">Revisa el formato del teléfono.</p>
+        </form>
+      </div>
+      <p class="small" style="margin-top:10px">Al enviar aceptas nuestra <a href="/legal/privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a> y la <a href="/legal/cookies.html" target="_blank" rel="noopener">Política de Cookies</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="current-year"></span> Descuanto · <a href="/legal/privacidad.html">Privacidad</a> · <a href="/legal/cookies.html">Cookies</a> · Contacto DPO: <a href="mailto:dpo@descuanto.es">dpo@descuanto.es</a></div>
+  </footer>
+
+  <script>
+    // Año automático
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Banner de cookies minimal (solo analíticas via Consent Mode v2)
+    (function(){
+      var consent = localStorage.getItem('cookies-consent');
+      if(!consent){
+        var banner = document.createElement('div');
+        banner.id = 'cookie-banner';
+        banner.innerHTML = `
+          <p>Usamos únicamente cookies analíticas anónimas (GA4 vía GTM) para medir tráfico. Se activan solo si aceptas.</p>
+          <div class="actions">
+            <a href="/legal/cookies.html" target="_blank" rel="noopener" style="align-self:center;font-size:12px;text-decoration:underline;">Más info</a>
+            <button id="cookie-reject">Rechazar</button>
+            <button id="cookie-accept">Aceptar</button>
+          </div>
+        `;
+        document.body.appendChild(banner);
+        document.getElementById('cookie-accept').addEventListener('click', function(){
+          localStorage.setItem('cookies-consent','accepted');
+          gtag('consent','update', { 'analytics_storage':'granted' });
+          document.getElementById('cookie-banner').remove();
+        });
+        document.getElementById('cookie-reject').addEventListener('click', function(){
+          localStorage.setItem('cookies-consent','rejected');
+          gtag('consent','update', { 'analytics_storage':'denied' });
+          document.getElementById('cookie-banner').remove();
+        });
+      } else if(consent === 'accepted') {
+        gtag('consent','update', { 'analytics_storage':'granted' });
+      }
+    })();
+
+    // Envío a Google Forms (usa tu endpoint y entry ID)
+    (function(){
+      var form = document.getElementById('phone-form');
+      var input = document.getElementById('phone');
+      var okMsg = document.getElementById('form-success');
+      var errMsg = document.getElementById('form-error');
+      var submitBtn = form.querySelector('button[type="submit"]');
+
+      // Endpoint deducido de tu URL de edición (sustituye si usas la vista previa /e/.../viewform)
+      const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/11B4EnmaiXO9Td5rU5P2ZWtzEIuACDb7f0XkquGInyeA/formResponse";
+      // Sustituye por el entry real del campo teléfono (ej: entry.1234567890)
+      const GOOGLE_ENTRY_KEY = "entry.YOUR_FIELD_ID";
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        okMsg.style.display = 'none';
+        errMsg.style.display = 'none';
+
+        if(!input.checkValidity()){ errMsg.style.display='block'; return; }
+
+        var fd = new FormData();
+        fd.append(GOOGLE_ENTRY_KEY, input.value);
+
+        try {
+          await fetch(GOOGLE_FORM_URL, { method:'POST', mode:'no-cors', body: fd });
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Recibido ✅';
+          okMsg.style.display = 'block';
+          // Evento anónimo a GTM (solo con consentimiento)
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'phone_optin', form_status: 'submitted' });
+          input.value = '';
+        } catch(err) {
+          console.error(err);
+          errMsg.style.display='block';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
